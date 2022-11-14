@@ -1,0 +1,31 @@
+﻿@model List<Form.Models.Domain.Employee>
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+<div><b>Tabel History Kontrak<br/></div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id </th>
+            <th>Event </th>
+            <th>Vendor</th>
+            <th>Nomor Kontrak</th>
+            <th>Periode Deadline</th>
+            <th>Jumlah Pemberitahuan</th>
+        </tr>
+    </thead>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.Id</td>
+            <td>@d.EventName </td>
+            <td>@d.NamaVendor</td>
+            <td>@d.No_Kontak</td>
+            <td>@d.Periode</td>
+            <td>@d.nilai</td>
+        </tr>
+    }
+</table>

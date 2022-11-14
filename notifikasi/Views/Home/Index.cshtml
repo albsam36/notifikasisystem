@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<div class="text-center">
+    <button type="button" class="btn btn-primary" id="btnAdd" onclick="Delete2();">Delete</button>
+    <button type="button" class="btn btn-primary" id="btnAdd" onclick="Delete3();">Delete3</button>
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<script>
+    $(document).ready(function () {
+        console.log("ready")
+    });
+    setInterval(Delete2, 86400000);
+    setInterval(Delete3, 87900000);
+    function Delete2() {
+        $.ajax({
+            url: "/IDCardform/Check",
+            type: "GET",
+            success: function (result) {
+                console.log("berhasil")
+                console.log(result)
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+    function Delete3() {
+        $.ajax({
+            url: "/IDCardform/Check3",
+            type: "GET",
+            success: function (result) {
+                console.log("berhasil 3")
+                console.log(result)
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+</script>
